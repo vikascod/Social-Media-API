@@ -1,2 +1,4 @@
 /__pycache__
 /db.py
+/app.__pycache__
+/app.router.__pycache__
