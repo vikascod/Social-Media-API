@@ -23,6 +23,7 @@ class User(Base):
     email = Column(String, unique=True, nullable=False)
     password = Column(String, nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow)
+    phone_number = Column(String)
 
 
 class Vote(Base):
