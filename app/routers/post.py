@@ -23,7 +23,7 @@ async def create(post:schemas.PostCreate, db:Session=Depends(get_db), current_us
 
 
 @router.get('/', response_model=List[schemas.PostOut])
-async def all_post(db:Session=Depends(get_db), current_user:int= Depends(get_current_user), limit:int=0, skip:int=0, search:Optional[str]=""):
+async def all_post(db:Session=Depends(get_db), current_user:int= Depends(get_current_user), limit:int=20, skip:int=0, search:Optional[str]=""):
 
     # posts = db.query(models.Post).filter(models.Post.title.contains(search)).limit(limit).offset(skip).all()
 

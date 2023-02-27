@@ -19,6 +19,12 @@ class UserOut(BaseModel):
         orm_mode=True
 
 
+class CommentCreate(BaseModel):
+    massage:str
+
+
+
+
 class Post(PostBase):
     id:int
     created_at = datetime
@@ -27,9 +33,19 @@ class Post(PostBase):
     class Config:
         orm_mode=True
 
+
 class PostOut(BaseModel):
     Post:Post
     votes:int
+    class Config:
+        orm_mode=True
+
+
+class CommentOut(BaseModel):
+    id:int
+    massage:str
+    created_at: datetime
+    post:Post
     class Config:
         orm_mode=True
 
