@@ -11,3 +11,4 @@ django-decouple==2.1
 oauthlib==3.2.1
 python-jose==3.3.0
 alembic==1.9.3
+passlib==1.7.4
