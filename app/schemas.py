@@ -56,6 +56,20 @@ class UserCreate(BaseModel):
     password:str
 
 
+class ProfileCreate(BaseModel):
+    first_name:str
+    last_name:str
+    profile_pic_url:str
+    bio:str
+    social_link:str
+
+class Profile(ProfileCreate):
+    id:int
+    user_id:int
+    created_on:datetime
+    class Config:
+        orm_mode=True
+
 
 class UserLogin(BaseModel):
     email:EmailStr

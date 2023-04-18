@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from app.database import Base, engine
 from app import models
-from app.routers import user, post, auth, vote, comment, chat, follow
+from app.routers import user, post, auth, vote, comment, chat, follow, profile
 from fastapi.middleware.cors import CORSMiddleware
 
 models.Base.metadata.create_all(bind=engine)
@@ -20,6 +20,7 @@ app.add_middleware(
 
 app.include_router(post.router)
 app.include_router(user.router)
+app.include_router(profile.router)
 app.include_router(auth.router)
 app.include_router(vote.router)
 app.include_router(follow.router)
