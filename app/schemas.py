@@ -6,6 +6,7 @@ from pydantic.types import conint
 class PostBase(BaseModel):
     title : str
     body : str
+    image_url:str
     published : bool
 
 class PostCreate(PostBase):
@@ -73,3 +74,9 @@ class TokenData(BaseModel):
 class Vote(BaseModel):
     post_id:int
     dir:conint(le=1)
+
+
+class FollowAdd(BaseModel):
+    follower_id: int
+    followed_id: int
+    

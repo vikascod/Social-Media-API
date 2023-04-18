@@ -1,4 +1,6 @@
 __pycache__
-db.py
+.env
 Procfile
 tests
+.pytest_cache
+alembic.ini

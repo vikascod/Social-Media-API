@@ -8,11 +8,12 @@ from sqlalchemy import func
 
 
 router = APIRouter(
-    tags=['Comments']
+    tags=['Comments'],
+    prefix='/comment'
 )
 
 
-@router.post('/comment/{post_id}', status_code=status.HTTP_201_CREATED, response_model=schemas.CommentOut)
+@router.post('/{post_id}', status_code=status.HTTP_201_CREATED, response_model=schemas.CommentOut)
 async def create(post_id:int, comment:schemas.CommentCreate, db:Session=Depends(get_db), current_user:int= Depends(get_current_user)):
     post = db.query(models.Post).filter(models.Post.id == post_id).first()
     if not post:

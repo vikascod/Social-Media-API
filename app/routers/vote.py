@@ -3,7 +3,7 @@ from app import database, schemas, models, oauth2
 from sqlalchemy.orm import Session
 
 router = APIRouter(
-    prefix='/vote',
+    prefix='/like',
     tags=['Likes']
 )
 

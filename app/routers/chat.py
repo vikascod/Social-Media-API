@@ -83,3 +83,5 @@ async def websocket_endpoint(
         if q is not None:
             await websocket.send_text(f"Query parameter q is: {q}")
         await websocket.send_text(f"Message text was: {data}, for item ID: {item_id}")
+
+
