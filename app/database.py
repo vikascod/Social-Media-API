@@ -12,7 +12,7 @@ POSTGRES_PORT = config('POSTGRES_PORT')
 
 
 DATABASE_URL = f"{PROVIDER}://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DB}"
-# DATABASE_URL = "postgresql://postgres:Mohan12345!#New@db.sufzgnedhgkypnzigomx.supabase.co:6543/postgres"
+
 
 
 engine = create_engine(DATABASE_URL)
