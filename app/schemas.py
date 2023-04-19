@@ -44,7 +44,7 @@ class PostOut(BaseModel):
 
 class CommentOut(BaseModel):
     id:int
-    massage:str
+    message:str
     created_at: datetime
     post:Post
     class Config:
