@@ -1,6 +1,6 @@
 from pydantic import BaseModel, EmailStr
 from datetime import datetime
-from typing import Optional
+from typing import Optional, Union
 from pydantic.types import conint
 
 class PostBase(BaseModel):
@@ -82,7 +82,7 @@ class Token(BaseModel):
 
 
 class TokenData(BaseModel):
-    id: int | None = None
+    id: Union[int, None] = None
 
 
 class Vote(BaseModel):
