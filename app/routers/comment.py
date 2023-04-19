@@ -13,7 +13,7 @@ router = APIRouter(
 )
 
 
-@router.post('/{post_id}', status_code=status.HTTP_201_CREATED, response_model=schemas.CommentOut)
+@router.post('/post/{post_id}', status_code=status.HTTP_201_CREATED, response_model=schemas.CommentOut)
 async def create(post_id:int, comment:schemas.CommentCreate, db:Session=Depends(get_db), current_user:int= Depends(get_current_user)):
     post = db.query(models.Post).filter(models.Post.id == post_id).first()
     if not post:
@@ -26,13 +26,8 @@ async def create(post_id:int, comment:schemas.CommentCreate, db:Session=Depends(
     return new_comment
 
 
-@router.get('/')
-async def read_all(db:Session=Depends(get_db)):
-    comments = db.query(models.Comment).all()
-    return comments
 
-
-@router.put('/{comment_id}')
+@router.put('/edit/{comment_id}')
 async def update(comment_id:int, request:schemas.CommentCreate, db:Session=Depends(get_db), current_user:int= Depends(get_current_user)):
     post_update = db.query(models.Comment).filter(models.Comment.id == comment_id)
     post = post_update.first()
@@ -49,7 +44,7 @@ async def update(comment_id:int, request:schemas.CommentCreate, db:Session=Depen
     return post_update
 
 
-@router.delete('/{comment_id}')
+@router.delete('/delete/{comment_id}')
 async def destroy(comment_id:int, db:Session=Depends(get_db), current_user:int= Depends(get_current_user)):
     comment = db.query(models.Comment).filter(models.Comment.id==comment_id).first()
 

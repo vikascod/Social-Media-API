@@ -11,7 +11,7 @@ router = APIRouter(
 )
 
 
-@router.post('/', status_code=status.HTTP_201_CREATED, response_model=schemas.UserOut)
+@router.post('/signup/', status_code=status.HTTP_201_CREATED, response_model=schemas.UserOut)
 def create(user:schemas.UserCreate, db:Session=Depends(get_db)):
     hashed_password = hash(user.password)
     user.password = hashed_password
@@ -36,7 +36,7 @@ def show(id:int, db:Session=Depends(get_db), current_user:int= Depends(get_curre
     return user
 
 
-@router.delete('/{id}')
+@router.delete('/delete/{id}')
 def destroy(id:int, db:Session=Depends(get_db), current_user:int= Depends(get_current_user)):
     user = db.query(models.User).filter(models.User.id==id).first()
     if not user:
