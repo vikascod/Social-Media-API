@@ -21,7 +21,7 @@ class UserOut(BaseModel):
 
 
 class CommentCreate(BaseModel):
-    massage:str
+    message:str
 
 
 
