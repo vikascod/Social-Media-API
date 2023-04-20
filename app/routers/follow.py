@@ -8,7 +8,7 @@ router = APIRouter(
 )
 
 
-@router.post('/user/')
+@router.post('/user/{follower_id}')
 async def follow_view(follower_id:int, db:Session=Depends(database.get_db), current_user:int=Depends(oauth2.get_current_user)):
     followed_id = current_user.id
     if follower_id == followed_id:
