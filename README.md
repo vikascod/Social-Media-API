@@ -3,14 +3,14 @@ Read Documentation   https://documenter.getpostman.com/view/22471348/2s93Y2T2Tn
 
 #Functionality
 
-¸ Used the modern technologies and tools such as Fastapi and Postgresql
+1. Used the modern technologies and tools such as Fastapi and Postgresql
 
-¸ Authentication and Authorization : Login with JWÎ Token
+2. Authentication and Authorization : Login with JWÎ Token
 
-¸ Implemented advance feature such as share post, likes and comments
+3. Implemented advance feature such as share post, likes and comments
 
-¸ Îhey can search an user via name or id
+4. They can search an user via name or id
 
-¸ Users can Follow and Unfollow another users
+5. Users can Follow and Unfollow another users
 
-¸ Îhey can see the follow of another users.
+6. They can see the follow of another users.
