@@ -2,6 +2,7 @@
 Read Documentation   https://documenter.getpostman.com/view/22471348/2s93Y2T2Tn
 
 #Functionality
+
 ¸ Used the modern technologies and tools such as Fastapi and Postgresql
 
 ¸ Authentication and Authorization : Login with JWÎ Token
